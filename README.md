@@ -1,3 +1,6 @@
 # TODO
 
-React + TypeScript + Universal Router
+- React
+- TypeScript
+- Universal Router
+- Jest
