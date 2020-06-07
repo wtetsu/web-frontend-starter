@@ -1,5 +1,5 @@
 import ReactDOM from "react-dom";
-import { router } from "./router";
+import { router, listen } from "./router";
 
 const render = async (location) => {
   const element = await router.resolve(location);
@@ -7,3 +7,11 @@ const render = async (location) => {
 };
 
 render(location.pathname);
+
+listen((location, action) => {
+  const path = `${location.pathname}${location.search}${location.hash}`;
+  console.log(`The current URL is ${path}`);
+  console.log(`The last navigation action was ${action}`);
+
+  render(path);
+});

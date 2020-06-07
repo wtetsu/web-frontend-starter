@@ -4,7 +4,10 @@ const TerserPlugin = require("terser-webpack-plugin");
 const mode = process.env.NODE_ENV || "development";
 const isProd = mode === "production";
 
-const copyPluginConfigs = [{ from: "static", to: "." }];
+const copyPluginConfigs = [
+  { from: "static", to: "." },
+  { from: __dirname + "/node_modules/milligram/dist/milligram.min.css", to: "css/" },
+];
 
 module.exports = {
   mode: mode,
@@ -53,12 +56,7 @@ module.exports = {
       new TerserPlugin({
         terserOptions: {
           compress: {
-            pure_funcs: [
-              "console.info",
-              "console.warn",
-              "console.time",
-              "console.timeEnd",
-            ],
+            pure_funcs: ["console.info", "console.warn", "console.time", "console.timeEnd"],
           },
         },
       }),

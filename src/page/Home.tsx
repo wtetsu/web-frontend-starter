@@ -1,27 +1,19 @@
 import React, { useState } from "react";
-import { Counter } from "./Counter";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
-import axios from "axios";
+import { Header } from "../component/Header";
 
-axios.get("data.json").then((data) => {
-  console.log(data);
-});
-
-const Main = () => {
+const Home = () => {
   const [startDate, setStartDate] = useState(new Date());
 
   return (
     <>
+      <Header />
       <h1>Home</h1>
 
       <DatePicker selected={startDate} onChange={(date: any) => setStartDate(date)} />
-
-      <Counter />
-      <Counter />
-      <Counter />
     </>
   );
 };
 
-export { Main };
+export { Home };
