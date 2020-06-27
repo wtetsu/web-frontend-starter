@@ -5,6 +5,7 @@ import { createBrowserHistory } from "history";
 import { Home } from "./page/Home";
 import { NotFound } from "./page/NotFound";
 import { Count } from "./page/Count";
+import { Form } from "./page/Form";
 
 const history = createBrowserHistory();
 
@@ -16,6 +17,10 @@ const routes = [
   {
     path: "/Count",
     action: () => <Count />,
+  },
+  {
+    path: "/Form",
+    action: () => <Form />,
   },
   {
     path: "(.*)",

@@ -13,11 +13,15 @@ const Header = () => {
       <a href="/" onClick={link}>
         Home
       </a>
-      &nbsp;
+      &nbsp;|&nbsp;
       <a href="Count" onClick={link}>
         Count
       </a>
-      &nbsp;
+      &nbsp;|&nbsp;
+      <a href="Form" onClick={link}>
+        Form
+      </a>
+      &nbsp;|&nbsp;
       <a href="WIP" onClick={link}>
         WIP
       </a>

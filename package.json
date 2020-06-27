@@ -23,6 +23,7 @@
     "react": "^16.13.1",
     "react-datepicker": "^3.0.0",
     "react-dom": "^16.13.1",
+    "react-select": "^3.1.0",
     "sweetalert": "^2.1.2",
     "universal-router": "^9.0.1"
   },
@@ -34,7 +35,7 @@
     "@typescript-eslint/parser": "^3.1.0",
     "copy-webpack-plugin": "^6.0.2",
     "cross-env": "^7.0.2",
-    "css-loader": "^3.5.3",
+    "css-loader": "^3.6.0",
     "eslint": "^7.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-prettier": "^3.1.3",

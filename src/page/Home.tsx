@@ -10,8 +10,6 @@ const Home = () => {
     <>
       <Header />
       <h1>Home</h1>
-
-      <DatePicker selected={startDate} onChange={(date: any) => setStartDate(date)} />
     </>
   );
 };
