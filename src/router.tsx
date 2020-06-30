@@ -1,5 +1,6 @@
 import React from "react";
 import UniversalRouter from "universal-router";
+// @ts-ignore
 import { createBrowserHistory } from "history";
 
 import { Home } from "./page/Home";

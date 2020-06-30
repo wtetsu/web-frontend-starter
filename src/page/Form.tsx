@@ -2,15 +2,17 @@ import React, { useState, useReducer } from "react";
 
 import immer from "immer";
 
+// @ts-ignore
 import DatePicker from "react-datepicker";
+// @ts-ignore
 import Select from "react-select";
-
 import "react-datepicker/dist/react-datepicker.css";
+import swal from "sweetalert";
 
 import { Header } from "../component/Header";
 
 type State = {
-  count: number;
+  flavour: string;
   message: string;
   startDate: Date;
   endDate: Date;
@@ -18,12 +20,16 @@ type State = {
 };
 
 type Action = {
-  type: "message" | "startDate" | "endDate" | "freeText";
+  type: "flavour" | "message" | "startDate" | "endDate" | "freeText";
   value: any;
 };
 
 const reducer = (state: State, action: Action): State => {
   switch (action.type) {
+    case "flavour":
+      return immer(state, (d) => {
+        d.flavour = action.value;
+      });
     case "message":
       return immer(state, (d) => {
         d.message = action.value;
@@ -47,15 +53,14 @@ const reducer = (state: State, action: Action): State => {
 
 const Form = () => {
   const initialState: State = {
-    count: 0,
+    flavour: "",
     message: "Hello!",
     startDate: new Date(Date.now() - 864e5),
     endDate: new Date(),
-    freeText: "",
+    freeText:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
   };
   const [state, dispatch] = useReducer(reducer, initialState);
-
-  console.debug(JSON.stringify(state, undefined, 2));
 
   const options = [
     { value: "chocolate", label: "Chocolate" },
@@ -69,7 +74,11 @@ const Form = () => {
 
       <div className="field">
         <div className="control">
-          <Select options={options} />
+          <Select
+            value={state.flavour}
+            options={options}
+            onChange={(e: any) => dispatch({ type: "flavour", value: e })}
+          />
         </div>
       </div>
 
@@ -100,13 +109,21 @@ const Form = () => {
         </div>
       </div>
 
-      <hr />
-
       <textarea
-        style={{ width: 600, height: 200 }}
+        style={{ width: 600, height: 100 }}
         value={state.freeText}
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => dispatch({ type: "freeText", value: e.target.value })}
       ></textarea>
+      <hr />
+      <button
+        type="button"
+        className="button is-link"
+        onClick={() => {
+          swal(JSON.stringify(state, undefined, 2));
+        }}
+      >
+        Show JSON
+      </button>
     </>
   );
 };

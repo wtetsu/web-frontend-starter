@@ -1,7 +1,7 @@
 import axios from "axios";
 
 class Data {
-  data: Object;
+  data: Promise<string>;
   async fetch() {
     this.data = axios.get("data.json");
   }

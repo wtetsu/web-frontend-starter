@@ -1,7 +1,7 @@
 import React from "react";
 import { push } from "../router";
 
-const link = (e) => {
+const link = (e: React.MouseEvent<HTMLAnchorElement>) => {
   e.preventDefault();
   const url: string = e.currentTarget.getAttribute("href");
   push(url, {});
