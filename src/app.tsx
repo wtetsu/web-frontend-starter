@@ -8,7 +8,13 @@ const render = async (locationPath: string) => {
 
 render(location.pathname);
 
-listen((location: Location, action: string) => {
+type Update = {
+  location: Location;
+  action: string;
+};
+
+listen((update: Update) => {
+  const { location, action } = update;
   const path = `${location.pathname}${location.search}${location.hash}`;
   console.log(`The current URL is ${path}`);
   console.log(`The last navigation action was ${action}`);
