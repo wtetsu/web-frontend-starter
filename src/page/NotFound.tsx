@@ -6,6 +6,7 @@ const NotFound = () => {
     <>
       <Header />
       <h1>Not Found</h1>
+      <img src="img/404.png" width="400" height="334" />
     </>
   );
 };
