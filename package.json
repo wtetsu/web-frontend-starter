@@ -25,6 +25,7 @@
     "react-datepicker": "^3.0.0",
     "react-dom": "^16.13.1",
     "react-select": "^3.1.0",
+    "recharts": "^1.8.5",
     "sweetalert": "^2.1.2",
     "universal-router": "^9.0.1"
   },

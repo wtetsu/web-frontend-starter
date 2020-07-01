@@ -4,9 +4,10 @@ import UniversalRouter from "universal-router";
 import { createBrowserHistory } from "history";
 
 import { Home } from "./page/Home";
-import { NotFound } from "./page/NotFound";
 import { Count } from "./page/Count";
 import { Form } from "./page/Form";
+import { Chart } from "./page/Chart";
+import { NotFound } from "./page/NotFound";
 
 const history = createBrowserHistory();
 
@@ -22,6 +23,10 @@ const routes = [
   {
     path: "/Form",
     action: () => <Form />,
+  },
+  {
+    path: "/Chart",
+    action: () => <Chart />,
   },
   {
     path: "(.*)",

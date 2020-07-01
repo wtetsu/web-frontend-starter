@@ -22,6 +22,10 @@ const Header = () => {
         Form
       </a>
       &nbsp;|&nbsp;
+      <a href="Chart" onClick={link}>
+        Chart
+      </a>
+      &nbsp;|&nbsp;
       <a href="WIP" onClick={link}>
         WIP
       </a>
