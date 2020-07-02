@@ -70,60 +70,66 @@ const Form = () => {
   return (
     <>
       <Header />
-      <h1>Form</h1>
+      <div className="content">
+        <h1 className="subtitle is-5">Form</h1>
 
-      <div className="field">
-        <div className="control">
-          <Select
-            value={state.flavour}
-            options={options}
-            onChange={(e: any) => dispatch({ type: "flavour", value: e })}
-          />
+        <div className="field">
+          <div className="control">
+            <Select
+              value={state.flavour}
+              options={options}
+              onChange={(e: any) => dispatch({ type: "flavour", value: e })}
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="field">
-        <div className="control">
-          <input
-            className="input is-info"
-            type="text"
-            value={state.message}
-            placeholder="Message"
-            onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch({ type: "message", value: e.target.value })}
-          />
+        <div className="field">
+          <div className="control">
+            <input
+              className="input is-info"
+              type="text"
+              value={state.message}
+              placeholder="Message"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                dispatch({ type: "message", value: e.target.value })
+              }
+            />
+          </div>
         </div>
-      </div>
 
-      <div className="field">
-        <div className="control">
-          <DatePicker
-            className="input is-info"
-            selected={state.startDate}
-            onChange={(date: Date) => dispatch({ type: "startDate", value: date })}
-          />
-          <DatePicker
-            className="input is-info"
-            selected={state.endDate}
-            onChange={(date: Date) => dispatch({ type: "endDate", value: date })}
-          />
+        <div className="field">
+          <div className="control">
+            <DatePicker
+              className="input is-info"
+              selected={state.startDate}
+              onChange={(date: Date) => dispatch({ type: "startDate", value: date })}
+            />
+            <DatePicker
+              className="input is-info"
+              selected={state.endDate}
+              onChange={(date: Date) => dispatch({ type: "endDate", value: date })}
+            />
+          </div>
         </div>
-      </div>
 
-      <textarea
-        style={{ width: 600, height: 100 }}
-        value={state.freeText}
-        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => dispatch({ type: "freeText", value: e.target.value })}
-      ></textarea>
-      <hr />
-      <button
-        type="button"
-        className="button is-link"
-        onClick={() => {
-          swal(JSON.stringify(state, undefined, 2));
-        }}
-      >
-        Show JSON
-      </button>
+        <textarea
+          style={{ width: 600, height: 100 }}
+          value={state.freeText}
+          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+            dispatch({ type: "freeText", value: e.target.value })
+          }
+        ></textarea>
+        <hr />
+        <button
+          type="button"
+          className="button is-link"
+          onClick={() => {
+            swal(JSON.stringify(state, undefined, 2));
+          }}
+        >
+          Show JSON
+        </button>
+      </div>
     </>
   );
 };

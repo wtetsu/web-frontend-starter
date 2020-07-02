@@ -1,9 +1,9 @@
 import React, { useReducer, useEffect } from "react";
 import immer from "immer";
 // @ts-ignore
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
 import axios from "axios";
 import { Header } from "../component/Header";
+import { Table } from "../component/Table";
 
 type State = {
   records: Object[];
@@ -25,7 +25,7 @@ const reducer = (state: State, action: Action): State => {
   }
 };
 
-const Chart = () => {
+const Grid = () => {
   const initialState: State = {
     records: [],
   };
@@ -44,16 +44,11 @@ const Chart = () => {
     <>
       <Header />
       <div className="content">
-        <h1 className="subtitle is-5">Chart</h1>
-        <LineChart width={600} height={300} data={state.records} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-          <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-          <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-          <XAxis dataKey="name" />
-          <YAxis />
-        </LineChart>
+        <h1 className="subtitle is-5">Grid</h1>
+        <Table headers={["name", "uv"]} records={state.records}></Table>
       </div>
     </>
   );
 };
 
-export { Chart };
+export { Grid };

@@ -1,11 +1,11 @@
 import React from "react";
 import UniversalRouter from "universal-router";
 // @ts-ignore
-import { createBrowserHistory } from "history";
-
+import { createBrowserHistory, Update, Listener } from "history";
 import { Home } from "./page/Home";
 import { Count } from "./page/Count";
 import { Form } from "./page/Form";
+import { Grid } from "./page/Grid";
 import { Chart } from "./page/Chart";
 import { NotFound } from "./page/NotFound";
 
@@ -25,6 +25,10 @@ const routes = [
     action: () => <Form />,
   },
   {
+    path: "/Grid",
+    action: () => <Grid />,
+  },
+  {
     path: "/Chart",
     action: () => <Chart />,
   },
@@ -36,7 +40,7 @@ const routes = [
 
 const router = new UniversalRouter(routes);
 
-const listen = (callback: Function) => {
+const listen = (callback: Listener<Update>) => {
   history.listen(callback);
 };
 

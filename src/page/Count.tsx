@@ -8,10 +8,12 @@ const Count = () => {
   return (
     <>
       <Header />
-      <h1>Count</h1>
-      <Counter />
-      <Counter />
-      <Counter />
+      <div className="content">
+        <h1 className="subtitle is-5">Count</h1>
+        <Counter />
+        <Counter />
+        <Counter />
+      </div>
     </>
   );
 };

@@ -22,6 +22,10 @@ const Header = () => {
         Form
       </a>
       &nbsp;|&nbsp;
+      <a href="Grid" onClick={link}>
+        Grid
+      </a>
+      &nbsp;|&nbsp;
       <a href="Chart" onClick={link}>
         Chart
       </a>
