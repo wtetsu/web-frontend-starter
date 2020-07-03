@@ -6,6 +6,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [Universal Router](https://github.com/kriasoft/universal-router) + [history](https://github.com/ReactTraining/history)
 - [Immer](https://github.com/immerjs/immer)
+- [localForage](https://github.com/localForage/localForage)
 - [Bulma](https://bulma.io/)
 - [Jest](https://jestjs.io/)
 

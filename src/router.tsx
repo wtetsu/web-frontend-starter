@@ -6,6 +6,7 @@ import { Count } from "./page/Count";
 import { Form } from "./page/Form";
 import { Grid } from "./page/Grid";
 import { Chart } from "./page/Chart";
+import { Todo } from "./page/Todo";
 import { NotFound } from "./page/NotFound";
 
 const history = createBrowserHistory();
@@ -16,20 +17,24 @@ const routes = [
     action: () => <Home />,
   },
   {
-    path: "/Count",
+    path: "/count",
     action: () => <Count />,
   },
   {
-    path: "/Form",
+    path: "/form",
     action: () => <Form />,
   },
   {
-    path: "/Grid",
+    path: "/grid",
     action: () => <Grid />,
   },
   {
-    path: "/Chart",
+    path: "/chart",
     action: () => <Chart />,
+  },
+  {
+    path: "/todo",
+    action: () => <Todo />,
   },
   {
     path: "(.*)",

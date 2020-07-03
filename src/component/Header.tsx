@@ -14,24 +14,28 @@ const Header = () => {
         Home
       </a>
       &nbsp;|&nbsp;
-      <a href="Count" onClick={link}>
+      <a href="count" onClick={link}>
         Count
       </a>
       &nbsp;|&nbsp;
-      <a href="Form" onClick={link}>
+      <a href="form" onClick={link}>
         Form
       </a>
       &nbsp;|&nbsp;
-      <a href="Grid" onClick={link}>
+      <a href="grid" onClick={link}>
         Grid
       </a>
       &nbsp;|&nbsp;
-      <a href="Chart" onClick={link}>
+      <a href="chart" onClick={link}>
         Chart
       </a>
       &nbsp;|&nbsp;
-      <a href="WIP" onClick={link}>
-        WIP
+      <a href="todo" onClick={link}>
+        ToDo
+      </a>
+      &nbsp;|&nbsp;
+      <a href="404" onClick={link}>
+        404
       </a>
     </div>
   );
