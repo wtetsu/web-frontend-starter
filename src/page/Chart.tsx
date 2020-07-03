@@ -1,7 +1,21 @@
 import React, { useReducer, useEffect } from "react";
 import immer from "immer";
-// @ts-ignore
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
+
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  Legend,
+  Tooltip,
+  Cell,
+} from "recharts";
+
 import axios from "axios";
 import { Header } from "../component/Header";
 
@@ -40,6 +54,8 @@ const Chart = () => {
     fetchRecords();
   }, []);
 
+  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+
   return (
     <>
       <Header />
@@ -50,7 +66,38 @@ const Chart = () => {
           <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
           <XAxis dataKey="name" />
           <YAxis />
+          <Tooltip />
+          <Legend />
         </LineChart>
+
+        <BarChart
+          width={600}
+          height={300}
+          data={state.records}
+          margin={{
+            top: 5,
+            right: 30,
+            left: 20,
+            bottom: 5,
+          }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="name" />
+          <YAxis />
+          <Tooltip />
+          <Legend />
+          <Bar dataKey="pv" fill="#8884d8" />
+          <Bar dataKey="uv" fill="#82ca9d" />
+        </BarChart>
+
+        <PieChart width={600} height={400}>
+          <Pie dataKey="uv" isAnimationActive={false} data={state.records} outerRadius={120} label>
+            {state.records.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+            ))}
+          </Pie>
+          <Tooltip />
+        </PieChart>
       </div>
     </>
   );

@@ -1,6 +1,5 @@
 import React, { useReducer, useEffect } from "react";
 import immer from "immer";
-// @ts-ignore
 import axios from "axios";
 import { Header } from "../component/Header";
 import { Table } from "../component/Table";

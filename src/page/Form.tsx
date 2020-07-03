@@ -1,10 +1,6 @@
 import React, { useState, useReducer } from "react";
-
 import immer from "immer";
-
-// @ts-ignore
 import DatePicker from "react-datepicker";
-// @ts-ignore
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
 import swal from "sweetalert";

@@ -10,17 +10,17 @@ const Table: FC<TableProps> = ({ headers, records }) => {
       <thead>
         <tr>
           <th></th>
-          {headers.map((h: string) => (
-            <th>{h}</th>
+          {headers.map((h: string, i: number) => (
+            <th key={i}>{h}</th>
           ))}
         </tr>
       </thead>
       <tbody>
         {records.map((rec: { [s: string]: string }, i) => (
-          <tr>
+          <tr key={i}>
             <td>{i}</td>
-            {headers.map((h: string) => (
-              <td>{rec[h]}</td>
+            {headers.map((h: string, i: number) => (
+              <td key={i}>{rec[h]}</td>
             ))}
           </tr>
         ))}

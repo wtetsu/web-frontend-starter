@@ -13,8 +13,9 @@ type Update = {
   action: string;
 };
 
-listen((update: Update) => {
-  const { location, action } = update;
+listen((update: any) => {
+  const location: Location = update.location;
+  const action: string = update.action;
   const path = `${location.pathname}${location.search}${location.hash}`;
   console.log(`The current URL is ${path}`);
   console.log(`The last navigation action was ${action}`);
