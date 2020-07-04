@@ -2,13 +2,17 @@
 
 <img src="https://github.com/wtetsu/frontend-starter/blob/master/static/img/home.png" title="Mouse Dictionary" width="400" height="334">
 
-- [React](https://reactjs.org/)
-- [TypeScript](https://www.typescriptlang.org/)
-- [Universal Router](https://github.com/kriasoft/universal-router) + [history](https://github.com/ReactTraining/history)
-- [Immer](https://github.com/immerjs/immer)
-- [localForage](https://github.com/localForage/localForage)
-- [Bulma](https://bulma.io/)
-- [Jest](https://jestjs.io/)
+|                |                                                                                                                        |
+| -------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| Language       | [TypeScript](https://www.typescriptlang.org/)                                                                          |
+| Module bundler | [webpack](https://webpack.js.org/)                                                                                     |
+| View           | [React](https://reactjs.org/)                                                                                          |
+| Router         | [Universal Router](https://github.com/kriasoft/universal-router) + [history](https://github.com/ReactTraining/history) |
+| Immutability   | [Immer](https://github.com/immerjs/immer)                                                                              |
+| Storage        | [localForage](https://github.com/localForage/localForage)                                                              |
+| CSS            | [Bulma](https://bulma.io/)                                                                                             |
+| Testing        | [Jest](https://jestjs.io/)                                                                                             |
+|                |                                                                                                                        |
 
 Component catalog:
 
@@ -30,4 +34,8 @@ npm install
 npm start
 ```
 
-![image](https://user-images.githubusercontent.com/515948/86256180-f7143d80-bbf2-11ea-92be-256225886141.png)
+### Demo
+
+https://web-frontend-starter.netlify.app/
+
+![image](https://user-images.githubusercontent.com/515948/86513257-9fb8dc00-be43-11ea-947e-adffc9072d85.png)
