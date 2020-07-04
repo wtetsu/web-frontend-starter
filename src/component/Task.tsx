@@ -59,9 +59,8 @@ const reducer = (state: State, action: Action): State => {
       return immer(state, (d) => {
         d.tasks = action.value;
       });
-    default:
-      throw new Error("Unexpected action.type:" + action.type);
   }
+  throw new Error("Unexpected action.type");
 };
 
 let reducerWrapper = reducer;

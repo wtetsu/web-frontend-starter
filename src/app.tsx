@@ -8,17 +8,12 @@ const render = async (locationPath: string) => {
 
 render(location.pathname);
 
-type Update = {
-  location: Location;
-  action: string;
-};
-
 listen((update: any) => {
   const location: Location = update.location;
   const action: string = update.action;
   const path = `${location.pathname}${location.search}${location.hash}`;
-  console.log(`The current URL is ${path}`);
-  console.log(`The last navigation action was ${action}`);
+  console.debug(`The current URL is ${path}`);
+  console.debug(`The last navigation action was ${action}`);
 
   render(path);
 });

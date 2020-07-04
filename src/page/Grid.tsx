@@ -5,7 +5,7 @@ import { Header } from "../component/Header";
 import { Table } from "../component/Table";
 
 type State = {
-  records: Object[];
+  records: { [key: string]: Object }[];
 };
 
 type Action = {
@@ -44,6 +44,13 @@ const Grid = () => {
       <Header />
       <div className="content">
         <h1 className="subtitle is-5">Grid</h1>
+
+        <h2 className="subtitle is-6">Horizontal</h2>
+        <Table headers={["name", "uv"]} records={state.records} horizontal={true}></Table>
+
+        <hr />
+
+        <h2 className="subtitle is-6">Vertical</h2>
         <Table headers={["name", "uv"]} records={state.records}></Table>
       </div>
     </>
