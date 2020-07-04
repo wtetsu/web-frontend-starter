@@ -6,7 +6,7 @@ const isProd = mode === "production";
 
 const copyPluginConfigs = [
   { from: "static", to: "." },
-  { from: __dirname + "/node_modules/bulma/css/bulma.css", to: "css/" },
+  { from: __dirname + "/node_modules/bulma/css/bulma.min.css", to: "css/" },
 ];
 
 module.exports = {

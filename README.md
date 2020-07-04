@@ -2,7 +2,7 @@
 
 <img src="https://github.com/wtetsu/frontend-starter/blob/master/static/img/home.png" title="Mouse Dictionary" width="400" height="334">
 
-|                |                                                                                                                        |
+| Concern        | Implementation                                                                                                         |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------- |
 | Language       | [TypeScript](https://www.typescriptlang.org/)                                                                          |
 | Module bundler | [webpack](https://webpack.js.org/)                                                                                     |
@@ -12,7 +12,6 @@
 | Storage        | [localForage](https://github.com/localForage/localForage)                                                              |
 | CSS            | [Bulma](https://bulma.io/)                                                                                             |
 | Testing        | [Jest](https://jestjs.io/)                                                                                             |
-|                |                                                                                                                        |
 
 Component catalog:
 
