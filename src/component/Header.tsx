@@ -10,6 +10,7 @@ const link = (e: React.MouseEvent<HTMLAnchorElement>) => {
 const Header = () => {
   const links = [
     { href: "/", text: "Home" },
+    { href: "/json", text: "JSON" },
     { href: "/count", text: "Count" },
     { href: "/form", text: "Form" },
     { href: "/grid", text: "Grid" },

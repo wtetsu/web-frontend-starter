@@ -1,4 +1,4 @@
-# Frontend Starter
+axi# Frontend Starter
 
 <img src="https://github.com/wtetsu/frontend-starter/blob/master/static/img/home.png" title="Mouse Dictionary" width="400" height="334">
 
@@ -10,6 +10,7 @@
 | Router         | [Universal Router](https://github.com/kriasoft/universal-router) + [history](https://github.com/ReactTraining/history) |
 | Immutability   | [Immer](https://github.com/immerjs/immer)                                                                              |
 | Storage        | [localForage](https://github.com/localForage/localForage)                                                              |
+| HTTP client    | [axios](https://github.com/axios/axios)                                                                                |
 | CSS            | [Bulma](https://bulma.io/)                                                                                             |
 | Testing        | [Jest](https://jestjs.io/)                                                                                             |
 
@@ -18,6 +19,7 @@ Component catalog:
 - [recharts](https://recharts.org/)
 - [react-datepicker](https://reactdatepicker.com/)
 - [react-select](https://react-select.com/)
+- [react-syntax-highlighter](https://github.com/conorhastings/react-syntax-highlighter)
 
 ## How to run
 

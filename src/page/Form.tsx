@@ -1,8 +1,8 @@
 import React, { useReducer } from "react";
-import immer from "immer";
 import DatePicker from "react-datepicker";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
+import immer from "immer";
 import swal from "sweetalert";
 
 import { Header } from "../component/Header";
@@ -42,20 +42,20 @@ const reducer = (state: State, action: Action): State => {
       return immer(state, (d) => {
         d.freeText = action.value;
       });
-    default:
-      throw new Error("Unexpected action.type:" + action.type);
   }
+  throw new Error("Unexpected action.type:" + action.type);
+};
+
+const initialState: State = {
+  flavour: "",
+  message: "Hello!",
+  startDate: new Date(Date.now() - 864e5),
+  endDate: new Date(),
+  freeText:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 };
 
 const Form = () => {
-  const initialState: State = {
-    flavour: "",
-    message: "Hello!",
-    startDate: new Date(Date.now() - 864e5),
-    endDate: new Date(),
-    freeText:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  };
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const options = [
@@ -74,7 +74,7 @@ const Form = () => {
             <Select
               value={state.flavour}
               options={options}
-              onChange={(e: any) => dispatch({ type: "flavour", value: e })}
+              onChange={(value: any) => dispatch({ type: "flavour", value: value })}
             />
           </div>
         </div>
@@ -96,12 +96,12 @@ const Form = () => {
         <div className="field">
           <div className="control">
             <DatePicker
-              className="input is-info"
+              className="input "
               selected={state.startDate}
               onChange={(date: Date) => dispatch({ type: "startDate", value: date })}
             />
             <DatePicker
-              className="input is-info"
+              className="input "
               selected={state.endDate}
               onChange={(date: Date) => dispatch({ type: "endDate", value: date })}
             />
@@ -109,6 +109,7 @@ const Form = () => {
         </div>
 
         <textarea
+          className="input"
           style={{ width: 600, height: 100 }}
           value={state.freeText}
           onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
