@@ -6,10 +6,11 @@ import immer from "immer";
 
 import { Prism } from "react-syntax-highlighter";
 import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
+import { sleep } from "../lib/util";
 
 type State = {
   resource: ResourceOption;
-  id: number;
+  id: string;
   jsonData: string;
 };
 
@@ -40,7 +41,7 @@ const reducer = (state: State, action: Action): State => {
       });
     case "id":
       return immer(state, (d) => {
-        d.id = parseInt(action.value, 10);
+        d.id = action.value;
       });
     case "jsonData":
       return immer(state, (d) => {
@@ -59,23 +60,20 @@ const resourceOptions: ResourceOption[] = [
 
 const initialState: State = {
   resource: resourceOptions[1],
-  id: 1234,
+  id: "1234",
   jsonData: "{}",
 };
 
-const sleep = async (time: number) => {
-  return new Promise((done) => {
-    setTimeout(() => {
-      done();
-    }, time);
-  });
-};
-const fetch = async (resource: ResourceOption, id: number) => {
+const fetch = async (resource: ResourceOption, id: string) => {
   // A real application fetches data from the server.
   await sleep(100);
+
+  const dataId = `${resource.value}Id`;
+
   const data = {
+    key: `${resource.value}:${id}`,
     resource: resource.value,
-    id,
+    [dataId]: id,
     data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
     timeStamp: new Date().getTime(),
   };
@@ -104,7 +102,7 @@ const Json = () => {
             </div>
             <div className="column" style={{ paddingLeft: 1, paddingRight: 1 }}>
               <input
-                type="number"
+                type="text"
                 className="input"
                 value={state.id}
                 onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch({ type: "id", value: e.target.value })}

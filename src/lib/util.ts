@@ -1,5 +1,4 @@
-const wait = async (time: number) => {
-  console.info("wait:start");
+const sleep = async (time: number) => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve();
@@ -7,4 +6,4 @@ const wait = async (time: number) => {
   });
 };
 
-export { wait };
+export { sleep };
