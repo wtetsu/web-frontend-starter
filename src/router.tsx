@@ -3,7 +3,6 @@ import UniversalRouter from "universal-router";
 import { createBrowserHistory, Update, Listener } from "history";
 import { Home } from "./page/Home";
 import { Json } from "./page/Json";
-import { Count } from "./page/Count";
 import { Form } from "./page/Form";
 import { Grid } from "./page/Grid";
 import { Chart } from "./page/Chart";
@@ -20,10 +19,6 @@ const routes = [
   {
     path: "/json",
     action: () => <Json />,
-  },
-  {
-    path: "/count",
-    action: () => <Count />,
   },
   {
     path: "/form",

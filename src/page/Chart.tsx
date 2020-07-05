@@ -62,7 +62,8 @@ const Chart = () => {
       <div className="content">
         <h1 className="subtitle is-5">Chart</h1>
         <LineChart width={600} height={300} data={state.records} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
-          <Line type="monotone" dataKey="uv" stroke="#8884d8" />
+          <Line type="monotone" dataKey="value1" stroke="#8884d8" />
+          <Line type="monotone" dataKey="value2" stroke="#82ca9d" />
           <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
           <XAxis dataKey="name" />
           <YAxis />
@@ -86,8 +87,8 @@ const Chart = () => {
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="pv" fill="#8884d8" />
-          <Bar dataKey="uv" fill="#82ca9d" />
+          <Bar dataKey="value1" fill="#8884d8" />
+          <Bar dataKey="value2" fill="#82ca9d" />
         </BarChart>
 
         <PieChart width={600} height={400}>

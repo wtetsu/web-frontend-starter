@@ -4,61 +4,46 @@ import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
 import immer from "immer";
 import swal from "sweetalert";
-
+import dayjs from "dayjs";
 import { Header } from "../component/Header";
 
 type State = {
-  flavour: string;
+  flavour: FlavourOption;
+  name: string;
+  date: Date;
+  time: Date;
   message: string;
-  startDate: Date;
-  endDate: Date;
-  freeText: string;
 };
 
 type Action = {
-  type: "flavour" | "message" | "startDate" | "endDate" | "freeText";
+  type: "flavour" | "name" | "date" | "time" | "message";
   value: any;
 };
 
 const reducer = (state: State, action: Action): State => {
-  switch (action.type) {
-    case "flavour":
-      return immer(state, (d) => {
-        d.flavour = action.value;
-      });
-    case "message":
-      return immer(state, (d) => {
-        d.message = action.value;
-      });
-    case "startDate":
-      return immer(state, (d) => {
-        d.startDate = action.value;
-      });
-    case "endDate":
-      return immer(state, (d) => {
-        d.endDate = action.value;
-      });
-    case "freeText":
-      return immer(state, (d) => {
-        d.freeText = action.value;
-      });
-  }
-  throw new Error("Unexpected action.type:" + action.type);
+  return immer(state, (d) => {
+    d[action.type] = action.value;
+  });
 };
 
 const initialState: State = {
-  flavour: "",
-  message: "Hello!",
-  startDate: new Date(Date.now() - 864e5),
-  endDate: new Date(),
-  freeText:
+  flavour: { value: "chocolate", label: "Chocolate" },
+  name: "",
+  date: dayjs().startOf("week").startOf("day").toDate(),
+  time: dayjs().toDate(),
+  message:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+};
+
+type FlavourOption = {
+  value: string;
+  label: string;
 };
 
 const Form = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const options = [
+  const options: FlavourOption[] = [
     { value: "chocolate", label: "Chocolate" },
     { value: "strawberry", label: "Strawberry" },
     { value: "vanilla", label: "Vanilla" },
@@ -70,6 +55,7 @@ const Form = () => {
         <h1 className="subtitle is-5">Form</h1>
 
         <div className="field">
+          <label className="label">Flavour</label>
           <div className="control">
             <Select
               value={state.flavour}
@@ -80,42 +66,57 @@ const Form = () => {
         </div>
 
         <div className="field">
+          <label className="label">Name</label>
           <div className="control">
             <input
               className="input is-info"
               type="text"
-              value={state.message}
-              placeholder="Message"
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                dispatch({ type: "message", value: e.target.value })
-              }
+              value={state.name}
+              placeholder="Name"
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch({ type: "name", value: e.target.value })}
             />
           </div>
         </div>
 
         <div className="field">
+          <label className="label">Date</label>
           <div className="control">
             <DatePicker
               className="input "
-              selected={state.startDate}
-              onChange={(date: Date) => dispatch({ type: "startDate", value: date })}
+              selected={state.date}
+              dateFormat="yyyy/MM/dd"
+              onChange={(date: Date) => dispatch({ type: "date", value: date })}
             />
+          </div>
+        </div>
+        <div className="field">
+          <label className="label">Time</label>
+          <div className="control">
             <DatePicker
               className="input "
-              selected={state.endDate}
-              onChange={(date: Date) => dispatch({ type: "endDate", value: date })}
+              selected={state.time}
+              showTimeSelect
+              dateFormat="yyyy/MM/dd HH:mm:ss"
+              onChange={(date: Date) => dispatch({ type: "time", value: date })}
             />
           </div>
         </div>
 
-        <textarea
-          className="input"
-          style={{ width: 600, height: 100 }}
-          value={state.freeText}
-          onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
-            dispatch({ type: "freeText", value: e.target.value })
-          }
-        ></textarea>
+        <div className="field">
+          <label className="label">Message</label>
+          <div className="control">
+            <textarea
+              className="input"
+              style={{ width: 600, height: 100 }}
+              value={state.message}
+              placeholder="Message"
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                dispatch({ type: "message", value: e.target.value })
+              }
+            ></textarea>
+          </div>
+        </div>
+
         <hr />
         <button
           type="button"
