@@ -1,12 +1,17 @@
-import React, { useReducer } from "react";
-import { Header } from "../component/Header";
+import React, { useReducer, useEffect } from "react";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
 import immer from "immer";
 
-import { Prism } from "react-syntax-highlighter";
-import { tomorrow } from "react-syntax-highlighter/dist/esm/styles/prism";
+// @ts-ignore
+import highlight from "highlight.js/lib/core";
+// @ts-ignore
+import json from "highlight.js/lib/languages/json";
+
+import { Header } from "../component/Header";
 import { sleep } from "../lib/util";
+
+highlight.registerLanguage("json", json);
 
 type State = {
   resource: ResourceOption;
@@ -83,6 +88,10 @@ const fetch = async (resource: ResourceOption, id: string) => {
 const Json = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
+  useEffect(() => {
+    highlight.highlightBlock(document.getElementById("jsonData"));
+  }, [state.jsonData]);
+
   return (
     <>
       <Header />
@@ -120,9 +129,11 @@ const Json = () => {
               </button>
             </div>
           </div>
-          <Prism language="json" style={tomorrow}>
-            {state.jsonData}
-          </Prism>
+          <pre>
+            <code id="jsonData" className="json">
+              {state.jsonData}
+            </code>
+          </pre>
         </div>
       </div>
     </>
