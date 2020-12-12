@@ -42,7 +42,7 @@ module.exports = {
     extensions: [".ts", ".tsx", ".js"],
   },
   plugins: [new CopyPlugin({ patterns: copyPluginConfigs })],
-  devtool: isProd ? false : "cheap-module-inline-source-map",
+  devtool: isProd ? false : "inline-cheap-module-source-map",
   devServer: {
     contentBase: "./dist",
     historyApiFallback: true,
