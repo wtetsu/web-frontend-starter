@@ -2,7 +2,7 @@
 
 # Frontend Starter
 
-<img src="https://github.com/wtetsu/frontend-starter/blob/master/static/img/home.png" title="Mouse Dictionary" width="400" height="334">
+<img src="https://github.com/wtetsu/frontend-starter/blob/master/public/img/home.png" title="Mouse Dictionary" width="400" height="334">
 
 | Concern        | Implementation                                                                                                         |
 | -------------- | ---------------------------------------------------------------------------------------------------------------------- |

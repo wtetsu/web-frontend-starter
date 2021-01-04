@@ -1,0 +1,18 @@
+[
+  { "name": "A", "value1": 0, "value2": 650 },
+  { "name": "B", "value1": 50, "value2": 600 },
+  { "name": "C", "value1": 100, "value2": 550 },
+  { "name": "D", "value1": 200, "value2": 450 },
+  { "name": "E", "value1": 400, "value2": 380 },
+  { "name": "F", "value1": 800, "value2": 260 },
+  { "name": "G", "value1": 500, "value2": 140 },
+  { "name": "H", "value1": 200, "value2": 50 },
+  { "name": "I", "value1": 100, "value2": 10 },
+  { "name": "J", "value1": 300, "value2": 10 },
+  { "name": "K", "value1": 500, "value2": 30 },
+  { "name": "L", "value1": 700, "value2": 50 },
+  { "name": "M", "value1": 550, "value2": 100 },
+  { "name": "N", "value1": 300, "value2": 200 },
+  { "name": "O", "value1": 250, "value2": 300 },
+  { "name": "P", "value1": 200, "value2": 400 }
+]
