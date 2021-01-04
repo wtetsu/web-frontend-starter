@@ -42,7 +42,7 @@ const Grid = () => {
 
   useEffect(() => {
     const fetchRecords = async () => {
-      const response = await axios.get("data/chart.json");
+      const response = await axios.get("/data/chart.json");
       dispatch({ type: "records", value: response.data });
     };
 

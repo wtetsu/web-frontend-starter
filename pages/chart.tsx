@@ -1,7 +1,20 @@
 import React, { useReducer, useEffect } from "react";
 import immer from "immer";
 
-import { LineChart, Line, CartesianGrid, XAxis, YAxis, BarChart, Bar, PieChart, Pie, Legend, Tooltip, Cell } from "recharts";
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  BarChart,
+  Bar,
+  PieChart,
+  Pie,
+  Legend,
+  Tooltip,
+  Cell,
+} from "recharts";
 
 import axios from "axios";
 import { Header } from "../components/Header";
@@ -34,7 +47,7 @@ const Chart = () => {
 
   useEffect(() => {
     const fetchRecords = async () => {
-      const response = await axios.get("data/chart.json");
+      const response = await axios.get("/data/chart.json");
       dispatch({ type: "records", value: response.data });
     };
 
