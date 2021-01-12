@@ -10,6 +10,7 @@ import json from "highlight.js/lib/languages/json";
 
 import { Header } from "../components/Header";
 import { sleep } from "../lib/util";
+import { fetcher } from "../lib/client/fetcher";
 
 highlight.registerLanguage("json", json);
 
@@ -58,9 +59,7 @@ const reducer = (state: State, action: Action): State => {
 
 const resourceOptions: ResourceOption[] = [
   { value: "user", label: "User" },
-  { value: "group", label: "Group" },
   { value: "item", label: "Item" },
-  { value: "comment", label: "Comment" },
 ];
 
 const initialState: State = {
@@ -75,14 +74,10 @@ const fetch = async (resource: ResourceOption, id: string) => {
 
   const dataId = `${resource.value}Id`;
 
-  const data = {
-    key: `${resource.value}:${id}`,
-    resource: resource.value,
-    [dataId]: id,
-    data: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    timeStamp: new Date().getTime(),
-  };
-  return JSON.stringify(data, undefined, 2);
+  if (resource.value === "user" || resource.value === "item") {
+    const data = await fetcher.fetch(resource.value, id);
+    return JSON.stringify(data, undefined, 2);
+  }
 };
 
 const Json = () => {
@@ -102,11 +97,21 @@ const Json = () => {
           <div className="columns">
             <div className="column" style={{ paddingRight: 1 }}>
               <div className="control">
-                <Select value={state.resource} options={resourceOptions} onChange={(value) => dispatch({ type: "resource", value: value as ResourceOption })} />
+                <Select
+                  value={state.resource}
+                  options={resourceOptions}
+                  onChange={(value: ResourceOption) => dispatch({ type: "resource", value: value as ResourceOption })}
+                  instanceId="selectResource"
+                />
               </div>
             </div>
             <div className="column" style={{ paddingLeft: 1, paddingRight: 1 }}>
-              <input type="text" className="input" value={state.id} onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch({ type: "id", value: e.target.value })} />
+              <input
+                type="text"
+                className="input"
+                value={state.id}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) => dispatch({ type: "id", value: e.target.value })}
+              />
             </div>
             <div className="column" style={{ paddingLeft: 1, paddingRight: 0 }}>
               <button
