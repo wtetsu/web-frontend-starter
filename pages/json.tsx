@@ -2,14 +2,14 @@ import React, { useReducer, useEffect } from "react";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
 import immer from "immer";
+import swal from "sweetalert";
 
 // @ts-ignore
 import highlight from "highlight.js/lib/core";
 // @ts-ignore
 import json from "highlight.js/lib/languages/json";
 
-import { Header } from "../components/Header";
-import { sleep } from "../lib/util";
+import { Header, Message } from "../components";
 import { fetcher } from "../lib/client/fetcher";
 
 highlight.registerLanguage("json", json);
@@ -18,6 +18,7 @@ type State = {
   resource: ResourceOption;
   id: string;
   jsonData: string;
+  errorMessage: string;
 };
 
 type Action =
@@ -31,6 +32,10 @@ type Action =
     }
   | {
       type: "jsonData";
+      value: string;
+    }
+  | {
+      type: "errorMessage";
       value: string;
     };
 
@@ -53,6 +58,10 @@ const reducer = (state: State, action: Action): State => {
       return immer(state, (d) => {
         d.jsonData = action.value;
       });
+    case "errorMessage":
+      return immer(state, (d) => {
+        d.errorMessage = action.value;
+      });
   }
   throw new Error("Unexpected action.type");
 };
@@ -66,18 +75,7 @@ const initialState: State = {
   resource: resourceOptions[0],
   id: "1234",
   jsonData: "{}",
-};
-
-const fetch = async (resource: ResourceOption, id: string) => {
-  // A real application fetches data from the server.
-  await sleep(100);
-
-  const dataId = `${resource.value}Id`;
-
-  if (resource.value === "user" || resource.value === "item") {
-    const data = await fetcher.fetch(resource.value, id);
-    return JSON.stringify(data, undefined, 2);
-  }
+  errorMessage: "",
 };
 
 const Json = () => {
@@ -86,6 +84,18 @@ const Json = () => {
   useEffect(() => {
     highlight.highlightBlock(document.getElementById("jsonData"));
   }, [state.jsonData]);
+
+  const fetchData = async (resource: ResourceOption, id: string) => {
+    if (resource.value === "user" || resource.value === "item") {
+      try {
+        const data = await fetcher.fetch(resource.value, id);
+        return JSON.stringify(data, undefined, 2);
+      } catch (ex) {
+        dispatch({ type: "errorMessage", value: "" });
+        dispatch({ type: "errorMessage", value: ex.toString() });
+      }
+    }
+  };
 
   return (
     <>
@@ -118,13 +128,15 @@ const Json = () => {
                 type="button"
                 className="button is-link"
                 onClick={async (e: React.MouseEvent<HTMLButtonElement>) => {
-                  dispatch({ type: "jsonData", value: await fetch(state.resource, state.id) });
+                  dispatch({ type: "jsonData", value: await fetchData(state.resource, state.id) });
                 }}
               >
                 Fetch
               </button>
             </div>
           </div>
+          <Message text={state.errorMessage}></Message>
+
           <pre>
             <code id="jsonData" className="json">
               {state.jsonData}
