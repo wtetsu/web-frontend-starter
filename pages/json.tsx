@@ -2,7 +2,6 @@ import React, { useReducer, useEffect } from "react";
 import Select from "react-select";
 import "react-datepicker/dist/react-datepicker.css";
 import immer from "immer";
-import swal from "sweetalert";
 
 // @ts-ignore
 import highlight from "highlight.js/lib/core";
