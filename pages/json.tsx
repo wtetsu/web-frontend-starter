@@ -1,15 +1,11 @@
 import React, { useReducer, useEffect } from "react";
 import Select from "react-select";
-import "react-datepicker/dist/react-datepicker.css";
 import immer from "immer";
-
-// @ts-ignore
 import highlight from "highlight.js/lib/core";
-// @ts-ignore
 import json from "highlight.js/lib/languages/json";
-
-import { Header, Message } from "../components";
+import { Header } from "../components";
 import { fetcher } from "../lib/client/fetcher";
+import { message } from "../lib/client/message";
 
 highlight.registerLanguage("json", json);
 
@@ -90,8 +86,7 @@ const Json = () => {
         const data = await fetcher.fetch(resource.value, id);
         return JSON.stringify(data, undefined, 2);
       } catch (ex) {
-        dispatch({ type: "errorMessage", value: "" });
-        dispatch({ type: "errorMessage", value: ex.toString() });
+        message.error(ex.toString());
       }
     }
   };
@@ -134,8 +129,6 @@ const Json = () => {
               </button>
             </div>
           </div>
-          <Message text={state.errorMessage}></Message>
-
           <pre>
             <code id="jsonData" className="json">
               {state.jsonData}

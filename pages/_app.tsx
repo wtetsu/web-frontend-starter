@@ -1,6 +1,8 @@
 import "../styles/globals.css";
 import "bulma/css/bulma.css";
 import "highlight.js/styles/tomorrow.css";
+import "react-datepicker/dist/react-datepicker.css";
+import "toastify-js/src/toastify.css";
 
 function MyApp({ Component, pageProps }) {
   return (
