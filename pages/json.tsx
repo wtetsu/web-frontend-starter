@@ -3,9 +3,10 @@ import Select from "react-select";
 import immer from "immer";
 import highlight from "highlight.js/lib/core";
 import json from "highlight.js/lib/languages/json";
-import { Header } from "../components";
+import { Button, Header } from "../components";
 import { fetcher } from "../lib/client/fetcher";
 import { message } from "../lib/client/message";
+import { sleep } from "../lib/util";
 
 highlight.registerLanguage("json", json);
 
@@ -14,6 +15,7 @@ type State = {
   id: string;
   jsonData: string;
   errorMessage: string;
+  loading: boolean;
 };
 
 type Action =
@@ -32,6 +34,10 @@ type Action =
   | {
       type: "errorMessage";
       value: string;
+    }
+  | {
+      type: "loading";
+      value: boolean;
     };
 
 type ResourceOption = {
@@ -57,6 +63,10 @@ const reducer = (state: State, action: Action): State => {
       return immer(state, (d) => {
         d.errorMessage = action.value;
       });
+    case "loading":
+      return immer(state, (d) => {
+        d.loading = action.value;
+      });
   }
   throw new Error("Unexpected action.type");
 };
@@ -71,6 +81,7 @@ const initialState: State = {
   id: "1234",
   jsonData: "{}",
   errorMessage: "",
+  loading: false,
 };
 
 const Json = () => {
@@ -83,10 +94,14 @@ const Json = () => {
   const fetchData = async (resource: ResourceOption, id: string) => {
     if (resource.value === "user" || resource.value === "item") {
       try {
+        dispatch({ type: "loading", value: true });
+        await sleep(500);
         const data = await fetcher.fetch(resource.value, id);
         return JSON.stringify(data, undefined, 2);
       } catch (ex) {
         message.error(ex.toString());
+      } finally {
+        dispatch({ type: "loading", value: false });
       }
     }
   };
@@ -118,15 +133,14 @@ const Json = () => {
               />
             </div>
             <div className="column" style={{ paddingLeft: 1, paddingRight: 0 }}>
-              <button
-                type="button"
-                className="button is-link"
-                onClick={async (e: React.MouseEvent<HTMLButtonElement>) => {
+              <Button
+                onClick={async (e) => {
                   dispatch({ type: "jsonData", value: await fetchData(state.resource, state.id) });
                 }}
+                busy={state.loading}
               >
                 Fetch
-              </button>
+              </Button>
             </div>
           </div>
           <pre>
