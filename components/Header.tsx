@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import React from "react";
 import Link from "next/link";
 
 const Header = () => {
@@ -11,6 +11,8 @@ const Header = () => {
       <Link href="/form">Form</Link>
       <span> | </span>
       <Link href="/grid">Grid</Link>
+      <span> | </span>
+      <Link href="/search">Search</Link>
       <span> | </span>
       <Link href="/chart">Chart</Link>
       <span> | </span>

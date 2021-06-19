@@ -17,7 +17,6 @@ const VerticalTable: FC<TableProps> = ({ headers, records }) => {
     <table className="table is-striped is-hoverable">
       <thead>
         <tr>
-          <th></th>
           {headers.map((h: string, i: number) => (
             <th key={i}>{h}</th>
           ))}
@@ -26,7 +25,6 @@ const VerticalTable: FC<TableProps> = ({ headers, records }) => {
       <tbody>
         {records.map((rec: { [s: string]: string }, i) => (
           <tr key={i}>
-            <td>{i}</td>
             {headers.map((h: string, i: number) => (
               <td key={i}>{rec[h]}</td>
             ))}

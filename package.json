@@ -30,7 +30,6 @@
     "toastify-js": "^1.11.0"
   },
   "devDependencies": {
-    "@types/highlightjs": "^10.1.0",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.12.3",
     "@types/react": "^17.0.11",

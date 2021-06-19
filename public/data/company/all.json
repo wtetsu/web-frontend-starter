@@ -1,0 +1,602 @@
+[
+  {
+    "id": 1,
+    "name": "Mynte",
+    "city": "Esperanza",
+    "slogan": "benchmark plug-and-play infrastructures"
+  },
+  {
+    "id": 2,
+    "name": "Twiyo",
+    "city": "Siilinjärvi",
+    "slogan": "extend dynamic deliverables"
+  },
+  {
+    "id": 3,
+    "name": "Trunyx",
+    "city": "Maunatlala",
+    "slogan": "revolutionize enterprise relationships"
+  },
+  {
+    "id": 4,
+    "name": "Ooba",
+    "city": "Vladislav",
+    "slogan": "reintermediate robust applications"
+  },
+  {
+    "id": 5,
+    "name": "Youspan",
+    "city": "Mölndal",
+    "slogan": "redefine turn-key infrastructures"
+  },
+  {
+    "id": 6,
+    "name": "Bluejam",
+    "city": "Cholargós",
+    "slogan": "matrix front-end web services"
+  },
+  {
+    "id": 7,
+    "name": "Mudo",
+    "city": "Quinta",
+    "slogan": "engineer integrated networks"
+  },
+  {
+    "id": 8,
+    "name": "Yata",
+    "city": "Paris 08",
+    "slogan": "utilize user-centric web-readiness"
+  },
+  {
+    "id": 9,
+    "name": "Jayo",
+    "city": "Grubišno Polje",
+    "slogan": "matrix innovative applications"
+  },
+  {
+    "id": 10,
+    "name": "Jaxworks",
+    "city": "Cagnes-sur-Mer",
+    "slogan": "integrate best-of-breed functionalities"
+  },
+  {
+    "id": 11,
+    "name": "Jaxworks",
+    "city": "Diang",
+    "slogan": "implement frictionless e-tailers"
+  },
+  {
+    "id": 12,
+    "name": "Edgewire",
+    "city": "Daigo",
+    "slogan": "iterate efficient mindshare"
+  },
+  {
+    "id": 13,
+    "name": "Twiyo",
+    "city": "Cucutilla",
+    "slogan": "transition world-class content"
+  },
+  {
+    "id": 14,
+    "name": "Thoughtbeat",
+    "city": "Fundación",
+    "slogan": "monetize virtual interfaces"
+  },
+  {
+    "id": 15,
+    "name": "Trunyx",
+    "city": "Tsyurupyns’k",
+    "slogan": "scale intuitive e-business"
+  },
+  {
+    "id": 16,
+    "name": "Tagchat",
+    "city": "Daxi",
+    "slogan": "expedite wireless bandwidth"
+  },
+  {
+    "id": 17,
+    "name": "Devify",
+    "city": "Axili",
+    "slogan": "reinvent customized users"
+  },
+  {
+    "id": 18,
+    "name": "Flashset",
+    "city": "Zapod",
+    "slogan": "syndicate open-source methodologies"
+  },
+  {
+    "id": 19,
+    "name": "Rooxo",
+    "city": "Troitsk",
+    "slogan": "unleash dot-com schemas"
+  },
+  {
+    "id": 20,
+    "name": "Feednation",
+    "city": "Tulsa",
+    "slogan": "streamline virtual channels"
+  },
+  {
+    "id": 21,
+    "name": "Flashspan",
+    "city": "Gunung Timur",
+    "slogan": "target synergistic e-business"
+  },
+  {
+    "id": 22,
+    "name": "Tagopia",
+    "city": "Deskáti",
+    "slogan": "e-enable back-end solutions"
+  },
+  {
+    "id": 23,
+    "name": "Digitube",
+    "city": "Guanyang",
+    "slogan": "deploy B2C architectures"
+  },
+  {
+    "id": 24,
+    "name": "Janyx",
+    "city": "Lutou",
+    "slogan": "redefine cross-media mindshare"
+  },
+  {
+    "id": 25,
+    "name": "Kimia",
+    "city": "Spas-Zaulok",
+    "slogan": "embrace global interfaces"
+  },
+  {
+    "id": 26,
+    "name": "Oba",
+    "city": "Qiqing",
+    "slogan": "unleash efficient deliverables"
+  },
+  {
+    "id": 27,
+    "name": "Meevee",
+    "city": "Zhangzhu",
+    "slogan": "productize enterprise solutions"
+  },
+  {
+    "id": 28,
+    "name": "Realblab",
+    "city": "Novovoronezh",
+    "slogan": "recontextualize bleeding-edge e-markets"
+  },
+  {
+    "id": 29,
+    "name": "Yodoo",
+    "city": "Shibetsu",
+    "slogan": "e-enable magnetic content"
+  },
+  {
+    "id": 30,
+    "name": "Camimbo",
+    "city": "Delicias",
+    "slogan": "cultivate innovative channels"
+  },
+  {
+    "id": 31,
+    "name": "Topiclounge",
+    "city": "Itacorubi",
+    "slogan": "recontextualize holistic relationships"
+  },
+  {
+    "id": 32,
+    "name": "Photobean",
+    "city": "Beiguoyuan",
+    "slogan": "embrace intuitive experiences"
+  },
+  {
+    "id": 33,
+    "name": "Kwimbee",
+    "city": "Jaro",
+    "slogan": "e-enable proactive platforms"
+  },
+  {
+    "id": 34,
+    "name": "Meedoo",
+    "city": "Myski",
+    "slogan": "embrace value-added infrastructures"
+  },
+  {
+    "id": 35,
+    "name": "Eimbee",
+    "city": "San Javier",
+    "slogan": "streamline cutting-edge e-tailers"
+  },
+  {
+    "id": 36,
+    "name": "Skibox",
+    "city": "Mojo",
+    "slogan": "redefine value-added applications"
+  },
+  {
+    "id": 37,
+    "name": "Rhyloo",
+    "city": "Nouaseur",
+    "slogan": "whiteboard back-end relationships"
+  },
+  {
+    "id": 38,
+    "name": "Buzzshare",
+    "city": "Oliveiras",
+    "slogan": "transform cross-media e-tailers"
+  },
+  {
+    "id": 39,
+    "name": "Aivee",
+    "city": "Skillingaryd",
+    "slogan": "implement dynamic relationships"
+  },
+  {
+    "id": 40,
+    "name": "Dabshots",
+    "city": "Colonia Neuland",
+    "slogan": "visualize cross-media interfaces"
+  },
+  {
+    "id": 41,
+    "name": "Demimbu",
+    "city": "Huaqiu",
+    "slogan": "scale B2C networks"
+  },
+  {
+    "id": 42,
+    "name": "Gigaclub",
+    "city": "Altan-Ovoo",
+    "slogan": "matrix virtual e-markets"
+  },
+  {
+    "id": 43,
+    "name": "Latz",
+    "city": "Heshi",
+    "slogan": "evolve B2B functionalities"
+  },
+  {
+    "id": 44,
+    "name": "Youspan",
+    "city": "Carrasqueira",
+    "slogan": "architect viral infrastructures"
+  },
+  {
+    "id": 45,
+    "name": "Skyndu",
+    "city": "Metapán",
+    "slogan": "grow robust methodologies"
+  },
+  {
+    "id": 46,
+    "name": "Kaymbo",
+    "city": "Sihanoukville",
+    "slogan": "reintermediate scalable e-business"
+  },
+  {
+    "id": 47,
+    "name": "Photojam",
+    "city": "Novi Vinodolski",
+    "slogan": "mesh world-class solutions"
+  },
+  {
+    "id": 48,
+    "name": "Innotype",
+    "city": "Santa Rita",
+    "slogan": "enhance cross-media synergies"
+  },
+  {
+    "id": 49,
+    "name": "Kaymbo",
+    "city": "Zaytā Jammā‘īn",
+    "slogan": "disintermediate killer users"
+  },
+  {
+    "id": 50,
+    "name": "Rhybox",
+    "city": "Shuangshi",
+    "slogan": "reintermediate open-source metrics"
+  },
+  {
+    "id": 51,
+    "name": "Skimia",
+    "city": "Casigua El Cubo",
+    "slogan": "evolve impactful models"
+  },
+  {
+    "id": 52,
+    "name": "Jaxworks",
+    "city": "Klwów",
+    "slogan": "reinvent visionary web services"
+  },
+  {
+    "id": 53,
+    "name": "Avaveo",
+    "city": "Linares",
+    "slogan": "integrate collaborative schemas"
+  },
+  {
+    "id": 54,
+    "name": "Twinder",
+    "city": "Santiago do Cacém",
+    "slogan": "unleash scalable users"
+  },
+  {
+    "id": 55,
+    "name": "Jabbersphere",
+    "city": "Jardim da Serra",
+    "slogan": "empower extensible synergies"
+  },
+  {
+    "id": 56,
+    "name": "Yakidoo",
+    "city": "Brodósqui",
+    "slogan": "maximize sexy web-readiness"
+  },
+  {
+    "id": 57,
+    "name": "Photobean",
+    "city": "Plavsk",
+    "slogan": "scale dynamic users"
+  },
+  {
+    "id": 58,
+    "name": "Trunyx",
+    "city": "Saint Aubin",
+    "slogan": "visualize innovative relationships"
+  },
+  {
+    "id": 59,
+    "name": "Eire",
+    "city": "Perstorp",
+    "slogan": "grow rich relationships"
+  },
+  {
+    "id": 60,
+    "name": "Blogpad",
+    "city": "Nanzhihui",
+    "slogan": "syndicate back-end synergies"
+  },
+  {
+    "id": 61,
+    "name": "Cogibox",
+    "city": "Chabany",
+    "slogan": "synthesize mission-critical content"
+  },
+  {
+    "id": 62,
+    "name": "Jayo",
+    "city": "Thanh Xuân",
+    "slogan": "implement intuitive partnerships"
+  },
+  {
+    "id": 63,
+    "name": "Quatz",
+    "city": "Seč",
+    "slogan": "productize B2C convergence"
+  },
+  {
+    "id": 64,
+    "name": "Janyx",
+    "city": "Thomazeau",
+    "slogan": "matrix sticky applications"
+  },
+  {
+    "id": 65,
+    "name": "Zoombeat",
+    "city": "Kupiskis",
+    "slogan": "engage collaborative relationships"
+  },
+  {
+    "id": 66,
+    "name": "Quinu",
+    "city": "Cúcuta",
+    "slogan": "cultivate killer infrastructures"
+  },
+  {
+    "id": 67,
+    "name": "Thoughtsphere",
+    "city": "Quípama",
+    "slogan": "brand 24/7 methodologies"
+  },
+  {
+    "id": 68,
+    "name": "Kwimbee",
+    "city": "Barcelona",
+    "slogan": "visualize 24/7 synergies"
+  },
+  {
+    "id": 69,
+    "name": "Riffwire",
+    "city": "Nikulino",
+    "slogan": "reinvent viral systems"
+  },
+  {
+    "id": 70,
+    "name": "Gigabox",
+    "city": "Buenaventura",
+    "slogan": "exploit plug-and-play e-business"
+  },
+  {
+    "id": 71,
+    "name": "Zoozzy",
+    "city": "Margamukti",
+    "slogan": "repurpose open-source action-items"
+  },
+  {
+    "id": 72,
+    "name": "Agivu",
+    "city": "Malabugas",
+    "slogan": "strategize plug-and-play e-tailers"
+  },
+  {
+    "id": 73,
+    "name": "Dazzlesphere",
+    "city": "'s-Hertogenbosch",
+    "slogan": "orchestrate interactive solutions"
+  },
+  {
+    "id": 74,
+    "name": "Jabberbean",
+    "city": "Sacramento",
+    "slogan": "drive impactful mindshare"
+  },
+  {
+    "id": 75,
+    "name": "Tagtune",
+    "city": "Yihe",
+    "slogan": "expedite ubiquitous bandwidth"
+  },
+  {
+    "id": 76,
+    "name": "Jabbersphere",
+    "city": "Daveluyville",
+    "slogan": "morph user-centric web-readiness"
+  },
+  {
+    "id": 77,
+    "name": "Twitterlist",
+    "city": "Chattanooga",
+    "slogan": "reinvent compelling convergence"
+  },
+  {
+    "id": 78,
+    "name": "Zoomzone",
+    "city": "Ferdinandovac",
+    "slogan": "redefine efficient e-services"
+  },
+  {
+    "id": 79,
+    "name": "Kimia",
+    "city": "Hongtang",
+    "slogan": "generate transparent interfaces"
+  },
+  {
+    "id": 80,
+    "name": "Youfeed",
+    "city": "Tambangan",
+    "slogan": "matrix frictionless methodologies"
+  },
+  {
+    "id": 81,
+    "name": "Tekfly",
+    "city": "Adirejo",
+    "slogan": "facilitate bleeding-edge supply-chains"
+  },
+  {
+    "id": 82,
+    "name": "Gabcube",
+    "city": "Sokol",
+    "slogan": "drive efficient channels"
+  },
+  {
+    "id": 83,
+    "name": "Oyope",
+    "city": "Stockholm",
+    "slogan": "mesh customized niches"
+  },
+  {
+    "id": 84,
+    "name": "Rhybox",
+    "city": "Toledo",
+    "slogan": "repurpose magnetic technologies"
+  },
+  {
+    "id": 85,
+    "name": "Tambee",
+    "city": "Drahichyn",
+    "slogan": "transform virtual eyeballs"
+  },
+  {
+    "id": 86,
+    "name": "Agivu",
+    "city": "Angadanan",
+    "slogan": "leverage global niches"
+  },
+  {
+    "id": 87,
+    "name": "Realbuzz",
+    "city": "Sorongan",
+    "slogan": "transform back-end markets"
+  },
+  {
+    "id": 88,
+    "name": "Dynabox",
+    "city": "Jinshan",
+    "slogan": "syndicate strategic technologies"
+  },
+  {
+    "id": 89,
+    "name": "Photojam",
+    "city": "Kekeri",
+    "slogan": "generate dot-com platforms"
+  },
+  {
+    "id": 90,
+    "name": "Shuffletag",
+    "city": "Centenario",
+    "slogan": "e-enable plug-and-play methodologies"
+  },
+  {
+    "id": 91,
+    "name": "Flashspan",
+    "city": "Henglian",
+    "slogan": "maximize B2C niches"
+  },
+  {
+    "id": 92,
+    "name": "Zooveo",
+    "city": "Américo Brasiliense",
+    "slogan": "streamline dot-com e-business"
+  },
+  {
+    "id": 93,
+    "name": "Mynte",
+    "city": "Namling",
+    "slogan": "monetize strategic vortals"
+  },
+  {
+    "id": 94,
+    "name": "Livepath",
+    "city": "Youfang",
+    "slogan": "reintermediate bricks-and-clicks ROI"
+  },
+  {
+    "id": 95,
+    "name": "Rhynoodle",
+    "city": "Shāhdādkot",
+    "slogan": "envisioneer frictionless e-business"
+  },
+  {
+    "id": 96,
+    "name": "Voonder",
+    "city": "Kapuan",
+    "slogan": "target rich action-items"
+  },
+  {
+    "id": 97,
+    "name": "Tazz",
+    "city": "Or Yehuda",
+    "slogan": "reinvent dot-com networks"
+  },
+  {
+    "id": 98,
+    "name": "Rhyloo",
+    "city": "Shaguotun",
+    "slogan": "expedite integrated interfaces"
+  },
+  {
+    "id": 99,
+    "name": "Chatterpoint",
+    "city": "Hele",
+    "slogan": "deploy ubiquitous schemas"
+  },
+  {
+    "id": 100,
+    "name": "Demizz",
+    "city": "Polykárpi",
+    "slogan": "repurpose mission-critical content"
+  }
+]
