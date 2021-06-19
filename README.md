@@ -42,3 +42,6 @@ npm dev
 ----
 
 ![image](https://user-images.githubusercontent.com/515948/86513257-9fb8dc00-be43-11ea-947e-adffc9072d85.png)
+
+
+Test data generator: https://www.mockaroo.com/
