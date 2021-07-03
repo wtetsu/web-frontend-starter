@@ -21,4 +21,4 @@ const fetchAll = async (dataName: string) => {
   return readJsonFile(`data/${dataName}/all.json`) as Promise<any[]>;
 };
 
-export { fetchById, fetchAll };
+export { readJsonFile, fetchById, fetchAll };
