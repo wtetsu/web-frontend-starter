@@ -1,12 +1,13 @@
 import React, { useReducer } from "react";
 import immer from "immer";
 import axios from "axios";
-import { Header } from "../components/Header";
+import { Button, Header } from "../components";
 import { Table } from "../components/Table";
 
 type State = {
   records: { [key: string]: Object }[];
   query: string;
+  loading: boolean;
 };
 
 type Action =
@@ -17,6 +18,10 @@ type Action =
   | {
       type: "update";
       value: Record<string, any>;
+    }
+  | {
+      type: "loading";
+      value: boolean;
     };
 
 const reducer = (state: State, action: Action): State => {
@@ -29,6 +34,10 @@ const reducer = (state: State, action: Action): State => {
       return immer(state, (d) => {
         Object.assign(d, action.value);
       });
+    case "loading":
+      return immer(state, (d) => {
+        d.loading = action.value;
+      });
   }
   throw new Error("Unexpected action.type");
 };
@@ -36,6 +45,7 @@ const reducer = (state: State, action: Action): State => {
 const initialState: State = {
   records: [],
   query: "",
+  loading: false,
 };
 
 type Query = {
@@ -45,18 +55,22 @@ type Query = {
 const Search = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
-  const search = (query: string) => {
-    const fetchRecords = async () => {
-      let params = {} as Query;
-      if (query) {
-        params.q = query;
-      }
+  const fetchRecords = async (query: string) => {
+    let params = {} as Query;
+    if (query) {
+      params.q = query;
+    }
+    const response = await axios.get("/api/companies", { params });
+    dispatch({ type: "records", value: response.data });
+  };
 
-      const response = await axios.get("/api/companies", { params });
-      dispatch({ type: "records", value: response.data });
-    };
-
-    fetchRecords();
+  const search = async (query: string) => {
+    try {
+      dispatch({ type: "loading", value: true });
+      await fetchRecords(query);
+    } finally {
+      dispatch({ type: "loading", value: false });
+    }
   };
 
   return (
@@ -80,9 +94,9 @@ const Search = () => {
               }}
             />
           </div>
-          <div className="control" onClick={() => search(state.query)}>
-            <a className="button is-info">Search</a>
-          </div>
+          <Button onClick={() => search(state.query)} busy={state.loading}>
+            Search
+          </Button>
         </div>
 
         <Table headers={["id", "name", "city", "slogan"]} records={state.records}></Table>

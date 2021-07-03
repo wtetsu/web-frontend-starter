@@ -134,9 +134,7 @@ const Json = () => {
             </div>
             <div className="column" style={{ paddingLeft: 1, paddingRight: 0 }}>
               <Button
-                onClick={async (e) => {
-                  dispatch({ type: "jsonData", value: await fetchData(state.resource, state.id) });
-                }}
+                onClick={async (e) => dispatch({ type: "jsonData", value: await fetchData(state.resource, state.id) })}
                 busy={state.loading}
               >
                 Fetch
