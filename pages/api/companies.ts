@@ -1,8 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { readCompanies } from "../../lib/server/reader";
+import { fetchAll } from "../../lib/server/reader";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
-  const sourceContent = await readCompanies();
+  const sourceContent = await fetchAll("company");
   if (!sourceContent) {
     res.statusCode = 404;
     res.end();

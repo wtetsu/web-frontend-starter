@@ -1,10 +1,10 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { readItem } from "../../../lib/server/reader";
+import { fetchById } from "../../../lib/server/reader";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const itemId = parseInt(req.query.itemId as string);
 
-  const content = await readItem(itemId);
+  const content = await fetchById("item", itemId);
   if (!content) {
     res.statusCode = 404;
     res.end();

@@ -10,22 +10,15 @@ const readJsonFile = async (fileRelativePath: string): Promise<any> => {
   return JSON.parse(content.toString());
 };
 
-const readUser = async (id: number) => {
+const fetchById = async (dataName: string, id: number) => {
   if (!Number.isFinite(id)) {
     throw new Error(`Invalid id: ${id}`);
   }
-  return readJsonFile(`data/user/${id}.json`) as Promise<Record<string, any>>;
+  return readJsonFile(`data/${dataName}/${id}.json`) as Promise<Record<string, any>>;
 };
 
-const readItem = async (id: number) => {
-  if (!Number.isFinite(id)) {
-    throw new Error(`Invalid id: ${id}`);
-  }
-  return readJsonFile(`data/item/${id}.json`) as Promise<Record<string, any>>;
+const fetchAll = async (dataName: string) => {
+  return readJsonFile(`data/${dataName}/all.json`) as Promise<any[]>;
 };
 
-const readCompanies = async () => {
-  return readJsonFile(`data/company/all.json`) as Promise<any[]>;
-};
-
-export { readUser, readItem, readCompanies };
+export { fetchById, fetchAll };
