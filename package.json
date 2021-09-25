@@ -14,32 +14,32 @@
     "test-cov": "npm test -- --coverage"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.4",
     "bulma": "^0.9.3",
-    "dayjs": "^1.10.6",
+    "dayjs": "^1.10.7",
     "highlight.js": "^11.2.0",
-    "immer": "^9.0.5",
+    "immer": "^9.0.6",
     "localforage": "^1.10.0",
     "next": "11.0.1",
     "rc-slider": "^9.7.2",
     "react": "17.0.2",
     "react-datepicker": "^4.2.1",
     "react-dom": "17.0.2",
-    "react-select": "^4.3.1",
-    "recharts": "^2.1.2",
+    "react-select": "^5.0.0",
+    "recharts": "^2.1.4",
     "sweetalert": "^2.1.2",
     "toastify-js": "^1.11.1"
   },
   "devDependencies": {
-    "@types/jest": "^27.0.1",
-    "@types/node": "^16.7.1",
-    "@types/react": "^17.0.19",
-    "@types/react-select": "^4.0.17",
-    "@types/recharts": "^1.8.19",
+    "@types/jest": "^27.0.2",
+    "@types/node": "^16.10.1",
+    "@types/react": "^17.0.24",
+    "@types/react-select": "^4.0.18",
+    "@types/recharts": "^1.8.20",
     "@types/toastify-js": "^1.9.2",
-    "jest": "^27.0.6",
-    "prettier": "^2.3.2",
+    "jest": "^27.2.2",
+    "prettier": "^2.4.1",
     "ts-jest": "^27.0.5",
-    "typescript": "^4.3.5"
+    "typescript": "^4.4.3"
   }
 }
