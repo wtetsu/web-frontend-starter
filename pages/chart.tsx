@@ -13,11 +13,8 @@ import {
   YAxis,
   BarChart,
   Bar,
-  PieChart,
-  Pie,
   Legend,
   Tooltip,
-  Cell,
 } from "recharts";
 
 import axios from "axios";
@@ -48,8 +45,6 @@ const reducer = (state: State, action: Action): State => {
       return immer(state, (d) => {
         d.rate = action.value;
       });
-    default:
-      throw new Error("Unexpected action.type:" + action.type);
   }
 };
 
@@ -68,8 +63,6 @@ const Chart = () => {
 
     fetchRecords();
   }, []);
-
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   return (
     <>
