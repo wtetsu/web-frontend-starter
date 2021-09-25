@@ -31,7 +31,8 @@ const initialState: State = {
   name: "",
   date: dayjs().startOf("week").startOf("day").toDate(),
   time: dayjs().toDate(),
-  message: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  message:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
 };
 
 type FlavourOption = {
@@ -56,7 +57,11 @@ const Form = () => {
         <div className="field">
           <label className="label">Flavour</label>
           <div className="control">
-            <Select value={state.flavour} options={options} onChange={(value: any) => dispatch({ type: "flavour", value: value })} />
+            <Select
+              value={state.flavour}
+              options={options}
+              onChange={(value: any) => dispatch({ type: "flavour", value: value })}
+            />
           </div>
         </div>
 
@@ -76,13 +81,24 @@ const Form = () => {
         <div className="field">
           <label className="label">Date</label>
           <div className="control">
-            <DatePicker className="input " selected={state.date} dateFormat="yyyy/MM/dd" onChange={(date: Date) => dispatch({ type: "date", value: date })} />
+            <DatePicker
+              className="input "
+              selected={state.date}
+              dateFormat="yyyy/MM/dd"
+              onChange={(date: Date) => dispatch({ type: "date", value: date })}
+            />
           </div>
         </div>
         <div className="field">
           <label className="label">Time</label>
           <div className="control">
-            <DatePicker className="input " selected={state.time} showTimeSelect dateFormat="yyyy/MM/dd HH:mm:ss" onChange={(date: Date) => dispatch({ type: "time", value: date })} />
+            <DatePicker
+              className="input "
+              selected={state.time}
+              showTimeSelect
+              dateFormat="yyyy/MM/dd HH:mm:ss"
+              onChange={(date: Date) => dispatch({ type: "time", value: date })}
+            />
           </div>
         </div>
 
@@ -94,7 +110,9 @@ const Form = () => {
               style={{ width: 600, height: 100 }}
               value={state.message}
               placeholder="Message"
-              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => dispatch({ type: "message", value: e.target.value })}
+              onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) =>
+                dispatch({ type: "message", value: e.target.value })
+              }
             ></textarea>
           </div>
         </div>

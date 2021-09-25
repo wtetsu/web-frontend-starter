@@ -7,8 +7,8 @@
     "build": "next build",
     "start": "next start",
     "export": "next build && next export",
-    "lint": "prettier --check src/**/*.{ts,tsx}",
-    "format": "prettier --write src/**/*.{ts,tsx}",
+    "lint": "prettier --check {components,lib,pages}/**/*.{ts,tsx}",
+    "format": "prettier --write {components,lib,pages}/**/*.{ts,tsx}",
     "test": "jest",
     "test-watch": "jest --watch",
     "test-cov": "npm test -- --coverage"
